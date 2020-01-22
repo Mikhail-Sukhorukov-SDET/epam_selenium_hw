@@ -29,6 +29,8 @@ urllib3 = "==1.25.3"
 virtualenv = "==16.7.4"
 wrapt = "==1.11.2"
 PyYAML = "==5.1.2"
+delayed-assert = "*"
+pytest = "*"
 
 [requires]
 python_version = "3.7"
