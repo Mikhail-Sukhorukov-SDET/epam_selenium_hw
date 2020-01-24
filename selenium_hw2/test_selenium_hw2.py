@@ -20,6 +20,8 @@ class TestHW2(object):
     THIRD_TEXT = "To be multiplatform"
     FORTH_TEXT = "Already have good base\n(about 20 internal and\nsome external projects),\nwish to get more…"
 
+    # run in this directory by pytest -v -n4
+
     @pytest.mark.parametrize("assert_data, locator", ([FIRST_TEXT,
                                                        "div.benefits div.col-sm-3:nth-child(1) span.benefit-txt"],
                                                       [SECOND_TEXT,
