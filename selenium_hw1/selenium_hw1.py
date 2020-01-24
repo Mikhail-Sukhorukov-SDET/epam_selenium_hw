@@ -3,7 +3,7 @@ import time
 from selenium.webdriver.common.by import By
 import selenium.common.exceptions as selexcept
 
-# to run press CTRL+SHIFT+F10 or run in command line: python selenium_hw1.py in derictory of file
+# to run press CTRL+SHIFT+F10 in PyCharm or run in command line: python selenium_hw1.py in derictory of file
 
 
 # Open test site by URL
