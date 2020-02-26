@@ -99,46 +99,50 @@ Check Left Section On Different Elements Page
 Select Checkboxes And Assert Following Log
     Select Checkbox  css:div.checkbox-row label.label-checkbox:nth-child(1) input
     Select Checkbox  css:div.checkbox-row label.label-checkbox:nth-child(3) input
-    Element Should Contain  css:ul.panel-body-list li:nth-child(2)  ${CheckboxWaterLog}
-    Element Should Contain  css:ul.panel-body-list li:nth-child(1)  ${CheckboxWindLog}
+    # Element Should Contain  css:ul.panel-body-list li:nth-child(2)  ${CheckboxWaterLog}
+    # Element Should Contain  css:ul.panel-body-list li:nth-child(1)  ${CheckboxWindLog}
 
 Select Radio Buttons And Assert Following Log
     Click Element  css:div.checkbox-row label.label-radio:nth-child(4) input
-    Element Should Contain  css:ul.panel-body-list li:nth-child(1)  ${RadioButtonSelenLog}
+    # Element Should Contain  css:ul.panel-body-list li:nth-child(1)  ${RadioButtonSelenLog}
 
 Select Drop-Down Element And Assert Following Log
     Click Element  css:div.colors
     Click Element  xpath://option[text()="Yellow"]
-    Element Should Contain  css:ul.panel-body-list li:nth-child(1)  ${Drop-DownYellowLog}
+    # Element Should Contain  css:ul.panel-body-list li:nth-child(1)  ${Drop-DownYellowLog}
 
 Unselect Checkboxes And Assert Following Log
     Click Element  css:div.checkbox-row label.label-checkbox:nth-child(1) input
     Click Element  css:div.checkbox-row label.label-checkbox:nth-child(3) input
-    Element Should Contain  css:ul.panel-body-list li:nth-child(2)  ${UncheckboxWaterLog}
-    Element Should Contain  css:ul.panel-body-list li:nth-child(1)  ${UncheckboxWindLog}
+    # Element Should Contain  css:ul.panel-body-list li:nth-child(2)  ${UncheckboxWaterLog}
+    # Element Should Contain  css:ul.panel-body-list li:nth-child(1)  ${UncheckboxWindLog}
 
 Drag And Drop From 20 To 0
     Drag And Drop By Offset  xpath://span[contains(text(),'20')]  -80  0
-    Element Should Contain  css:ul.panel-body-list li:nth-child(1)  ${Range2From0Log}
+    # Element Should Contain  css:ul.panel-body-list li:nth-child(1)  ${Range2From0Log}
 
 Drag And Drop From 100 To 0
     Drag And Drop  xpath://span[contains(text(),'100')]  xpath://span[contains(text(),'0')]
-    Element Should Contain  css:ul.panel-body-list li:nth-child(1)  ${Range2To0Log}
+    # Element Should Contain  css:ul.panel-body-list li:nth-child(1)  ${Range2To0Log}
 
 Drag And Drop From 0 To 100
     Drag And Drop By Offset  xpath://span[contains(text(),'0')]  400  0
     Sleep  2
     Drag And Drop By Offset  xpath://span[contains(text(),'0')]  400  0
-    Element Should Contain  css:ul.panel-body-list li:nth-child(2)  ${Range2To100Log}
-    Element Should Contain  css:ul.panel-body-list li:nth-child(1)  ${Range2From100Log}
+    # Element Should Contain  css:ul.panel-body-list li:nth-child(2)  ${Range2To100Log}
+    # Element Should Contain  css:ul.panel-body-list li:nth-child(1)  ${Range2From100Log}
 
 Drag And Drop From 100 To 30
     Drag And Drop By Offset  xpath://span[contains(text(),'100')]  -265  0
     # BAG!!!!!!!!!!!!!!!!!!!!
-    Element Should Contain  css:ul.panel-body-list li:nth-child(1)  ${Range2From30Log}
+    # Element Should Contain  css:ul.panel-body-list li:nth-child(1)  ${Range2From30Log}
 
 Drag And Drop From 100 To 70
     Drag And Drop By Offset  xpath://span[contains(text(),'100')]  -115  0
-    Element Should Contain  css:ul.panel-body-list li:nth-child(1)  ${Range2To70Log}
+    # Element Should Contain  css:ul.panel-body-list li:nth-child(1)  ${Range2To70Log}
+
+Assert Log
+    [Arguments]  ${Number_of_row}  ${Content}
+    Element Should Contain  css:ul.panel-body-list li:nth-child(${Number_of_row})  ${Content}
 
 
