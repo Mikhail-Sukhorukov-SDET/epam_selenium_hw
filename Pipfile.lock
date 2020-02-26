@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "a6bea20d27629b8bcc36e37c9c646f3ebb399d3c76a5c30bfaa4343421e278fc"
+            "sha256": "ede7ac9c0dbad60145b3a4ac3d3c8b9b86857cddd777e9a7f709345461be7192"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -260,6 +260,22 @@
             "index": "pypi",
             "markers": "python_version != '2.6'",
             "version": "==5.1.2"
+        },
+        "robotframework": {
+            "hashes": [
+                "sha256:cc4b04f711677c94c7d1e30ef1e5cdd50c0b731f8038d6214379c3def183c7f0",
+                "sha256:f10dd7c0c8c7962a4f80dd1e026b5db731b9391bc6e1f9ebb96d685eb1230dbc"
+            ],
+            "index": "pypi",
+            "version": "==3.1.2"
+        },
+        "robotframework-seleniumlibrary": {
+            "hashes": [
+                "sha256:9c67c15b6d81d86ade8d41b295b06259dd90dc63179fd1f02af92288b44a4107",
+                "sha256:b4a3a58d3c240a2004d7436e4806b5de669db329cd6fd264f45b65943c5140c4"
+            ],
+            "index": "pypi",
+            "version": "==4.3.0"
         },
         "rsa": {
             "hashes": [

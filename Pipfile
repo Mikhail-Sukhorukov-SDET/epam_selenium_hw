@@ -32,6 +32,8 @@ PyYAML = "==5.1.2"
 delayed-assert = "*"
 pytest = "==5.3.4"
 pytest-xdist = "*"
+robotframework = "*"
+robotframework-seleniumlibrary = "*"
 
 [requires]
 python_version = "3.7"
