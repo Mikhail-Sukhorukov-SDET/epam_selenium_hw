@@ -3,7 +3,7 @@ Library  SeleniumLibrary
 Resource  ../Resources/Helper.robot
 
 *** Variables ***
-${Timeout}  0
+${Timeout}  1
 
 
 *** Test Cases ***
