@@ -7,12 +7,20 @@ ${Browser}  Chrome
 ${UserName}  PITER CHAILOVSKII
 ${DifferentElementsPageTitle}  Different Elements
 ${HomePageTitle}  Home Page
+${DatesPageTitle}  Dates
 ${CheckboxWaterLog}  Water: condition changed to true
 ${CheckboxWindLog}  Wind: condition changed to true
 ${UncheckboxWaterLog}  Water: condition changed to false
 ${UncheckboxWindLog}  Wind: condition changed to false
 ${RadioButtonSelenLog}  metal: value changed to Selen
 ${Drop-DownYellowLog}  Colors: value changed to Yellow
+${Range2From0Log}  Range 2(From):0 link clicked
+${Range2To0Log}  Range 2(To):0 link clicked
+${Range2From100Log}  Range 2(From):100 link clicked
+${Range2To100Log}  Range 2(To):100 link clicked
+${Range2From30Log}  Range 2(From):30 link clicked
+${Range2To70Log}  Range 2(To):70 link clicked
+
 
 *** Keywords ***
 Start Browser and Maximize
@@ -22,6 +30,7 @@ Start Browser and Maximize
     should be equal  ${Title}  ${HomePageTitle}
 
 Close Browser Window
+    Capture Page Screenshot
     Close Browser
 
 Perform Login
@@ -57,6 +66,12 @@ Navigate to Different Elements Page
     Click Element  //a[contains(text(),'Different elements')]
     ${Title}=  Get Title
     should be equal  ${Title}  ${DifferentElementsPageTitle}
+
+Navigate to Dates Page
+    Click Element  css:ul.nav > li.dropdown > a
+    Click Element  //a[contains(text(),'Dates')]
+    ${Title}=  Get Title
+    should be equal  ${Title}  ${DatesPageTitle}
 
 Check Interface On Different Elements Page
     # checkboxes
@@ -101,5 +116,29 @@ Unselect Checkboxes And Assert Following Log
     Click Element  css:div.checkbox-row label.label-checkbox:nth-child(3) input
     Element Should Contain  css:ul.panel-body-list li:nth-child(2)  ${UncheckboxWaterLog}
     Element Should Contain  css:ul.panel-body-list li:nth-child(1)  ${UncheckboxWindLog}
+
+Drag And Drop From 20 To 0
+    Drag And Drop By Offset  xpath://span[contains(text(),'20')]  -80  0
+    Element Should Contain  css:ul.panel-body-list li:nth-child(1)  ${Range2From0Log}
+
+Drag And Drop From 100 To 0
+    Drag And Drop  xpath://span[contains(text(),'100')]  xpath://span[contains(text(),'0')]
+    Element Should Contain  css:ul.panel-body-list li:nth-child(1)  ${Range2To0Log}
+
+Drag And Drop From 0 To 100
+    Drag And Drop By Offset  xpath://span[contains(text(),'0')]  400  0
+    Sleep  2
+    Drag And Drop By Offset  xpath://span[contains(text(),'0')]  400  0
+    Element Should Contain  css:ul.panel-body-list li:nth-child(2)  ${Range2To100Log}
+    Element Should Contain  css:ul.panel-body-list li:nth-child(1)  ${Range2From100Log}
+
+Drag And Drop From 100 To 30
+    Drag And Drop By Offset  xpath://span[contains(text(),'100')]  -265  0
+    # BAG!!!!!!!!!!!!!!!!!!!!
+    Element Should Contain  css:ul.panel-body-list li:nth-child(1)  ${Range2From30Log}
+
+Drag And Drop From 100 To 70
+    Drag And Drop By Offset  xpath://span[contains(text(),'100')]  -115  0
+    Element Should Contain  css:ul.panel-body-list li:nth-child(1)  ${Range2To70Log}
 
 
