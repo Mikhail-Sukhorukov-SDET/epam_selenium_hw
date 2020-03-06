@@ -21,6 +21,7 @@ def browser():
 @allure.suite('smoke')
 @pytest.mark.smoke
 class TestOnlySmoke():
+    @allure.testcase('smoke')
     def test_copy1(self, browser):
         browser.get(url)
         # Assert Browser title
@@ -32,6 +33,7 @@ class TestOnlySmoke():
         browser.find_element_by_id("password").send_keys("1234")
         browser.find_element_by_id("login-button").click()
 
+    @allure.testcase('smoke')
     def test_copy2(self, browser):
         browser.get(url)
         # Assert Browser title
@@ -43,6 +45,7 @@ class TestOnlySmoke():
         browser.find_element_by_id("password").send_keys("1234")
         browser.find_element_by_id("login-button").click()
 
+    @allure.testcase('smoke')
     def test_copy3(self, browser):
         browser.get(url)
         # Assert Browser title
@@ -58,6 +61,7 @@ class TestOnlySmoke():
 @allure.suite('regression')
 @pytest.mark.regression
 class TestOnlyRegression():
+    @allure.testcase('regression')
     def test_copy1(self, browser):
         browser.get(url)
         # Assert Browser title
@@ -69,6 +73,7 @@ class TestOnlyRegression():
         browser.find_element_by_id("password").send_keys("1234")
         browser.find_element_by_id("login-button").click()
 
+    @allure.testcase('regression')
     def test_copy2(self, browser):
         browser.get(url)
         # Assert Browser title
@@ -80,6 +85,7 @@ class TestOnlyRegression():
         browser.find_element_by_id("password").send_keys("1234")
         browser.find_element_by_id("login-button").click()
 
+    @allure.testcase('regression')
     def test_copy3(self, browser):
         browser.get(url)
         # Assert Browser title
@@ -92,8 +98,9 @@ class TestOnlyRegression():
         browser.find_element_by_id("login-button").click()
 
 
-@allure.suite('both')
+@allure.suite('TwoRegressionOnlyOneSmoke')
 class TestTwoRegressionOnlyOneSmoke():
+    @allure.testcase('regression')
     @pytest.mark.regression
     def test_copy1(self, browser):
         browser.get(url)
@@ -106,6 +113,7 @@ class TestTwoRegressionOnlyOneSmoke():
         browser.find_element_by_id("password").send_keys("1234")
         browser.find_element_by_id("login-button").click()
 
+    @allure.testcase('regression')
     @pytest.mark.regression
     def test_copy2(self, browser):
         browser.get(url)
@@ -118,6 +126,7 @@ class TestTwoRegressionOnlyOneSmoke():
         browser.find_element_by_id("password").send_keys("1234")
         browser.find_element_by_id("login-button").click()
 
+    @allure.testcase('smoke')
     @pytest.mark.smoke
     def test_copy3(self, browser):
         browser.get(url)
@@ -133,6 +142,7 @@ class TestTwoRegressionOnlyOneSmoke():
 
 @allure.suite('both')
 class TestBoth():
+    @allure.testcase('both')
     @pytest.mark.smoke
     @pytest.mark.regression
     def test_copy1(self, browser):
@@ -146,6 +156,7 @@ class TestBoth():
         browser.find_element_by_id("password").send_keys("1234")
         browser.find_element_by_id("login-button").click()
 
+    @allure.testcase('both')
     @pytest.mark.smoke
     @pytest.mark.regression
     def test_copy2(self, browser):
@@ -159,6 +170,7 @@ class TestBoth():
         browser.find_element_by_id("password").send_keys("1234")
         browser.find_element_by_id("login-button").click()
 
+    @allure.testcase('both')
     @pytest.mark.smoke
     @pytest.mark.regression
     def test_copy3(self, browser):
