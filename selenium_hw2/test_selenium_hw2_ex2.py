@@ -1,5 +1,6 @@
 from selenium import webdriver
 import pytest
+import allure
 
 url = "https://epam.github.io/JDI/index.html"
 
@@ -17,6 +18,7 @@ def browser():
     browser.quit()
 
 
+@allure.testcase('smoke')
 @pytest.mark.smoke
 class TestOnlySmoke():
     def test_copy1(self, browser):
@@ -53,6 +55,7 @@ class TestOnlySmoke():
         browser.find_element_by_id("login-button").click()
 
 
+@allure.testcase('regression')
 @pytest.mark.regression
 class TestOnlyRegression():
     def test_copy1(self, browser):
@@ -89,6 +92,7 @@ class TestOnlyRegression():
         browser.find_element_by_id("login-button").click()
 
 
+@allure.testcase('both')
 class TestTwoRegressionOnlyOneSmoke():
     @pytest.mark.regression
     def test_copy1(self, browser):
@@ -127,6 +131,7 @@ class TestTwoRegressionOnlyOneSmoke():
         browser.find_element_by_id("login-button").click()
 
 
+@allure.testcase('both')
 class TestBoth():
     @pytest.mark.smoke
     @pytest.mark.regression

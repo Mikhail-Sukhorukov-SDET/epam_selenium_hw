@@ -1,8 +1,7 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-import selenium.common.exceptions as selexcept
 import pytest
-import time
+import allure
 
 url = "https://epam.github.io/JDI/index.html"
 
@@ -23,6 +22,7 @@ class TestHW2(object):
 
     # run in this directory by pytest -n4
 
+    @allure.testcase("parametrize")
     @pytest.mark.parametrize("assert_data, locator", ([FIRST_TEXT,
                                                        "div.benefits div.col-sm-3:nth-child(1) span.benefit-txt"],
                                                       [SECOND_TEXT,
