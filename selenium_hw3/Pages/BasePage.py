@@ -2,6 +2,7 @@ import selenium_hw3.Pages.BasePageLocators as locators
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import selenium.common.exceptions as ex
+import allure
 
 
 class BasePage():
@@ -24,6 +25,7 @@ class BasePage():
     def __init__(self, browser):
         self.browser = browser
 
+    @allure.step("Login with selected parameters")
     def perform_login(self):
         """ Perform login """
         self.browser.find_element(*locators.USER_ICON_BUTTON).click()
@@ -31,10 +33,12 @@ class BasePage():
         self.browser.find_element(*locators.USER_PASSWORD_TEXT_INPUT).send_keys(BasePage.PASSWORD)
         self.browser.find_element(*locators.SUBMIT_BUTTON).click()
 
+    @allure.step("Get text of user name")
     def get_username(self):
         """ Get text of user name """
         return self.browser.find_element(*locators.USER_NAME_TEXT).text
 
+    @allure.step("Get text of header menu by argument")
     def get_header_menu_text(self, menu):
         """ Get text of header menu by argument """
         if menu == BasePage.HOME:
@@ -50,6 +54,7 @@ class BasePage():
             metals_colors = self.browser.find_element(*locators.METALS_COLORS_LINK).text
             return metals_colors
 
+    @allure.step("Method should check displaying of something")
     def wait_until_displayed(self, locator, timeout=5):
         """ Method should check displaying of something
         return True if it was displayed (by timeout=5)
@@ -60,6 +65,7 @@ class BasePage():
         except ex.TimeoutException:
             return False
 
+    @allure.step("Method should check displaying of something just on time")
     def displayed(self, locator, timeout=0):
         """ Method should check displaying of something just on time
         return True if it was displayed (by timeout)
