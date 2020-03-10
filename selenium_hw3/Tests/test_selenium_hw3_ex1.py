@@ -6,6 +6,7 @@ import allure
 
 
 @allure.suite("HW-3")
+@pytest.mark.po
 class TestTask():
 
     # run in directory selenium_hw/selenium_hw3 with: pytest -n4
