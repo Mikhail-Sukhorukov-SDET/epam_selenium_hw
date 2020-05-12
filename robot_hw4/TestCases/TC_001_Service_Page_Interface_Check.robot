@@ -2,6 +2,8 @@
 Library  SeleniumLibrary
 Resource  ../Pages/BasePage.robot
 Resource  ../Pages/DifferentElementsPage.robot
+Test Setup  Start Browser and Maximize
+Test Teardown  Close Browser Window
 
 *** Variables ***
 ${Timeout}  1
@@ -14,8 +16,8 @@ ${Drop-DownYellowLog}  Colors: value changed to Yellow
 
 *** Test Cases ***
 TC_001 Service Page Interface Check
-    [Setup]  Start Browser and Maximize
-    [Teardown]  Close Browser Window
+    [Documentation]  The first task
+    [Tags]  Smoke
     Perform Login  epam  1234
     Check User Name
     Sleep  ${Timeout}

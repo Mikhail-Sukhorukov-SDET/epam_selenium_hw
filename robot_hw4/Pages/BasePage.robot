@@ -19,7 +19,7 @@ Start Browser and Maximize
     should be equal  ${Title}  ${HomePageTitle}
 
 Close Browser Window
-    Capture Page Screenshot
+    # Capture Page Screenshot
     Close Browser
 
 Perform Login

@@ -2,6 +2,8 @@
 Library  SeleniumLibrary
 Resource  ../Pages/BasePage.robot
 Resource  ../Pages/DatesPage.robot
+Test Setup  Start Browser and Maximize
+Test Teardown  Close Browser Window
 
 *** Variables ***
 ${Timeout}  1
@@ -15,8 +17,8 @@ ${Range2To70Log}  Range 2(To):70 link clicked
 
 *** Test Cases ***
 TC_002 Dates Page Sliders Check
-    [Setup]  Start Browser and Maximize
-    [Teardown]  Close Browser Window
+    [Documentation]  The second task
+    [Tags]  Smoke
     Perform Login  epam  1234
     Check User Name
     Navigate to Dates Page
