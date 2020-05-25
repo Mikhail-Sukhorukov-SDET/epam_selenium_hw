@@ -14,6 +14,7 @@ def browser():
     browser.quit()
 
 
+@pytest.mark.hw2_ex1
 class TestHW2(object):
     FIRST_TEXT = "To include good practices\nand ideas from successful\nEPAM project"
     SECOND_TEXT = "To be flexible and\ncustomizable"

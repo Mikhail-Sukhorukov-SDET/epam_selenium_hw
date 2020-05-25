@@ -4,7 +4,7 @@ Library  SeleniumLibrary
 Variables  ../Pages/DifferentElementsPageLocators.py
 
 *** Keywords ***
-Check Interface On Different Elements Page
+Check "Interface" Elements
     # checkboxes
     Page Should Contain Element  ${WATER_CHECKBOX}
     Page Should Contain Element  ${EARTH_CHECKBOX}
@@ -21,22 +21,22 @@ Check Interface On Different Elements Page
     Page Should Contain Element  ${DEFAULT_BUTTON}
     Page Should Contain Element  ${BUTTON}
 
-Check Right Section On Different Elements Page
+Check "Right" Bar
     Page Should Contain Element  ${RIGHT_SIDE_BAR}
 
-Check Left Section On Different Elements Page
+Check "Left" Bar
     Page Should Contain Element  ${LEFT_SIDE_BAR}
 
-Click Water Checkbox
+Click "Water" Checkbox
     Click Element  ${WATER_CHECKBOX}
 
-Click Wind Checkbox
+Click "Wind" Checkbox
     Click Element  ${WIND_CHECKBOX}
 
-Select Selen Radio Button
+Select "Selen" Radio Button
     Click Element  ${SELEN_RADIO_BUTTON}
 
-Select Yellow Drop-Down Element
+Select "Yellow" Drop-Down Element
     Click Element  ${DROP_DOWN_BUTTON}
     Click Element  ${YELLOW_DROP_DOWN}
 

@@ -11,7 +11,7 @@ browser = webdriver.Chrome()
 browser.maximize_window()
 browser.get("https://epam.github.io/JDI/")
 # wait until browser displayed
-time.sleep(1.5)
+time.sleep(10)
 
 # Assert Browser title
 assert browser.title == "Home Page"
