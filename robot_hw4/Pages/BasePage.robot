@@ -4,12 +4,11 @@ Library  SeleniumLibrary
 Variables  ../Pages/BasePageLocators.py
 
 *** Variables ***
-${URL}  https://epam.github.io/JDI/
-${Browser}  Chrome
-${UserName}  PITER CHAILOVSKII
-${HomePageTitle}  Home Page
-${DifferentElementsPageTitle}  Different Elements
-${DatesPageTitle}  Dates
+${URL} =  https://epam.github.io/JDI/
+${Browser} =  Chrome
+${HomePageTitle} =  Home Page
+${DifferentElementsPageTitle} =  Different Elements
+${DatesPageTitle} =  Dates
 
 *** Keywords ***
 Start Browser and Maximize
@@ -29,8 +28,9 @@ Perform Login
     Input Text  ${USER_PASSWORD_TEXT_INPUT}  ${password}
     Click Element  ${SUBMIT_BUTTON}
 
-Check "User Name"
-    Element Text Should Be  ${USER_NAME_TEXT}  ${UserName}
+Check "Username"
+    [Arguments]  ${Username}
+    Element Text Should Be  ${USER_NAME_TEXT}  ${Username}
 
 Check "Header Service" Drop-Down List
     Click Element  ${HEADER_SERVICES_DROP_DOWN_BUTTON}
