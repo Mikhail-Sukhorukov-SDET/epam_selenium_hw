@@ -19,10 +19,12 @@ User should be able to watch "Service" drop-down list onto the Header
     [Documentation]  "Service" drop-down list onto the Header should be onto the "Home" Page
     [Tags]  Smoke
     Given BasePage.Start Browser and Maximize
+    When BasePage.Perform Login  ${LOGIN}  ${PASSWORD}
     Then BasePage.Check "Header Service" Drop-Down List
 
 User should be able to watch "Service" drop-down list onto the Left-Side
     [Documentation]  "Service" drop-down list onto the Left Side should be onto the "Home" Page
     [Tags]  Smoke
     Given BasePage.Start Browser and Maximize
+    When BasePage.Perform Login  ${LOGIN}  ${PASSWORD}
     Then BasePage.Check "Left-Side Service" Drop-Down List
