@@ -5,7 +5,7 @@ import selenium.common.exceptions as ex
 import allure
 
 
-class BasePage():
+class BasePage:
     """ Methods and data that the same for all pages """
     # test data
     USER_NAME = "PITER CHAILOVSKII"
