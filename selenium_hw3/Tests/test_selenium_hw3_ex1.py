@@ -10,6 +10,8 @@ import allure
 class TestTask:
 
     # run in directory selenium_hw/selenium_hw3 with: pytest -n4
+    # allure need to be installed with homebrew install allure
+    # to generate allure report: allure generate results
     @allure.testcase("EX-1, parametrize")
     @pytest.mark.parametrize("number_of_image", (1, 2, 3, 4), ids=["the first", "the second", "the third", "the forth"])
     def test_hw3_ex1(self, browser, number_of_image):

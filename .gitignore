@@ -14,3 +14,5 @@ selenium_hw1/.idea/
 selenium_hw2/.pytest_cache/
 selenium_hw2/allure-results/
 robot_hw4/Results/
+allure-report/
+results/
